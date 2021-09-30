@@ -23,7 +23,7 @@ export class TasksController {
 
   @Get(':id')
   async getById(@Param('id') id: number): Promise<Task> {
-    return this.tasksService.getById(id);
+    return this.tasksService.getById(+id);
   }
 
   @Post()
@@ -39,6 +39,6 @@ export class TasksController {
 
   @Delete(':id')
   async delete(@Param('id') id: number) {
-    return this.tasksService.delete(id);
+    return this.tasksService.delete(+id);
   }
 }
